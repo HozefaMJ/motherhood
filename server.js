@@ -15,7 +15,7 @@ app.get('/login',async(req,res) => {
     const url = 'https://api.instahealthsolutions.com/motherhood_t/Customer/Login.do?_method=login&hospital_name=motherhood_t'
     const fetch_res = await fetch(url,{
         method: 'GET',
-        headers: { 'x-insta-auth': 'shopify:1234' }
+        headers: { 'x-insta-auth': process.env.AUTH }
     })
     const json = await fetch_res.json();
     res.json(json)
